@@ -1,0 +1,35 @@
+﻿@page
+@model SavedInSessionModel
+@{
+    ViewData["Title"] = "Data in session";
+}
+
+<h1>Zadanie - szczęśliwy numerek</h1>
+<p>Dane w zapisane w sesji</p>
+@if (Model.FizzBuzz != null)
+{
+    <p>
+        @Html.DisplayNameFor(model => Model.FizzBuzz.number):
+        @Model.FizzBuzz.number
+    </p>
+}
+
+<h1>Zadanie - rok przestępny</h1>
+
+@if(Model.yearModel !=null)
+{
+<p>@*
+    @Html.DisplayNameFor(model => Model.yearModel):*@
+    @Model.yearModel.name,
+   @* @Html.DisplayNameFor(model => Model.yearModel):*@
+    @Model.yearModel.year - rok
+    @if (@Model.yearModel.ExtraYear())
+    {
+        <span>przestępny</span>
+    }
+    else
+    {
+        <span>nieprzestępny</span>
+    }
+</p>
+}

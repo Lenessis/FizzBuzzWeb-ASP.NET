@@ -38,3 +38,6 @@ D:\Dokumenty\Studia\06.SEMESTR VI\.NET\zad1\FizzBuzzWeb\obj\Debug\net5.0\ref\Fiz
 D:\Dokumenty\Studia\06.SEMESTR VI\.NET\zad1\FizzBuzzWeb\obj\Debug\net5.0\FizzBuzzWeb.pdb
 D:\Dokumenty\Studia\06.SEMESTR VI\.NET\zad1\FizzBuzzWeb\obj\Debug\net5.0\FizzBuzzWeb.genruntimeconfig.cache
 D:\Dokumenty\Studia\06.SEMESTR VI\.NET\zad1\FizzBuzzWeb\obj\Debug\net5.0\FizzBuzzWeb.csproj.CopyComplete
+D:\Dokumenty\Studia\06.SEMESTR VI\.NET\zad1\FizzBuzzWeb\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\Dokumenty\Studia\06.SEMESTR VI\.NET\zad1\FizzBuzzWeb\obj\Debug\net5.0\Razor\Pages\SavedInSession.cshtml.g.cs
+D:\Dokumenty\Studia\06.SEMESTR VI\.NET\zad1\FizzBuzzWeb\obj\Debug\net5.0\Razor\Pages\IndexYear.cshtml.g.cs

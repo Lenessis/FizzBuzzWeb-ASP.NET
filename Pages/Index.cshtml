@@ -1,10 +1,58 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Fizz Buzz";
 }
-
 <div class="text-center">
-    <h1 class="display-4">Cześć</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome @Model.Name</h1>
+
+    @*
+        // --- Stary formularz ---
+        <form method="post">
+            <label for="Number">Numer:</label>
+            <input name="Number" /><br />
+            <button type="submit">Zatwierdź</button>
+        </form>*@
+
+    @*// --- Nowy formularz z tagami razeora ---
+        - zawsze muszą być tagi form i method
+        - zawsze musi byc przycisk
+        -- waliduje dane, nadaje typ inputa, zabezpiecza pole przed atakami wstrzykiwania SQL
+        -- label bierze nazwe z modelu
+    *@
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="FizzBuzz.number"></label>
+            <input class="form-control" asp-for="FizzBuzz.number" />
+            <span asp-validation-for="FizzBuzz.number" class="text-danger"></span><br />
+            @*taki komunikat musi być wyświetlan w span*@
+        </div>
+
+
+        <button class="btn btn-primary" type="submit">Zatwierdź</button>
+    </form>
+    <br />
+
+
+    @{
+        if (Model.hide == false)
+        {
+            @*Pokazanie TempData*@
+            if (!Model.alert)
+            {
+                <p class="alert alert-success" role="alert">@ViewData["result"]</p>
+            }
+
+            else
+                {
+                    <p class="alert alert-danger" role="alert">@ViewData["result"]</p>
+                }
+
+        }
+    }
+
+
+
+
 </div>
+

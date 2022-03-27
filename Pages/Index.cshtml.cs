@@ -70,8 +70,7 @@ namespace FizzBuzzWeb.Pages
                         break;
                 }
 
-                HttpContext.Session.SetString("Data",
-                JsonConvert.SerializeObject(FizzBuzz)); //wpisywanie obiektu na string (json)
+                HttpContext.Session.SetString("Data", JsonConvert.SerializeObject(FizzBuzz)); //wpisywanie obiektu na string (json)
                // return RedirectToPage("./SavedInSession"); // przekierowanie
 
             }

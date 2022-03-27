@@ -19,6 +19,7 @@ namespace FizzBuzzWeb.Pages
 
         [BindProperty]
         public Year year { get; set; }
+        public List<Year> list = new List<Year>();
 
         
 
@@ -37,9 +38,22 @@ namespace FizzBuzzWeb.Pages
                 gender = year.Gender();
                 hide = false;
 
+                //list.Add(year);
 
-                HttpContext.Session.SetString("Year", JsonConvert.SerializeObject(year));
-
+                if (HttpContext.Session.GetString("YearList") == null)
+                {
+                    list.Add(year);
+                    HttpContext.Session.SetString("YearList", JsonConvert.SerializeObject(list));
+                }
+                    
+                else
+                {
+                    var sessionList = HttpContext.Session.GetString("YearList");
+                    list = JsonConvert.DeserializeObject<List<Year>>(sessionList);
+                    list.Add(year);
+                    HttpContext.Session.SetString("YearList", JsonConvert.SerializeObject(list));
+                }
+                    
             }
 
             return Page();

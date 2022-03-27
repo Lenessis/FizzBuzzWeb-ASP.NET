@@ -22,7 +22,7 @@ namespace FizzBuzzWeb.Models
                 return false;
         }
 
-        public bool IsDividableInto5()
+        public bool IsDividableInto5() //  nazwy lepiej żeby dotycczyły tego co zwraca w tym wypadku buzz
         {
             if (number % 5 == 0)
                 return true;

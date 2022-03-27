@@ -17,7 +17,8 @@ namespace FizzBuzzWeb.Pages
     {
 
         public FizzBuzz FizzBuzz { get; set; }
-        public Year yearModel { get; set; }
+        //public Year yearModel { get; set; }
+        public List<Year> yearsList = new List<Year>();
 
         public void OnGet()
         {
@@ -27,10 +28,12 @@ namespace FizzBuzzWeb.Pages
                 JsonConvert.DeserializeObject<FizzBuzz>(Data); // konwertowanie na obiekt
 
 
-            var YearData = HttpContext.Session.GetString("Year");
+            var YearData = HttpContext.Session.GetString("YearList");
             if(YearData != null)
             {
-                yearModel = JsonConvert.DeserializeObject<Year>(YearData);
+                //yearModel = JsonConvert.DeserializeObject<Year>(YearData);
+                yearsList = JsonConvert.DeserializeObject<List<Year>>(YearData);
+
             }
         }
     }

@@ -13,8 +13,11 @@ namespace FizzBuzzWeb.Models
         public int year { get; set; }
 
         [Display(Name = "Nazwa użytkownika")]
-        [Required(ErrorMessage = "Pole jest obowiązkowe"), StringLength ( 100, ErrorMessage = "Oczekiwana {0} powinna zawierać do {1}  znaków.")] 
+        [Required(ErrorMessage = "Pole jest obowiązkowe"), StringLength ( 100, ErrorMessage = "Oczekiwana {0} powinna zawierać do {1}  znaków."), RegularExpression(@"^[a-z A-Z]*$", ErrorMessage = "{0} powinna zawierać tylko litery!")] 
         public string name { get; set; }
+        // wyrażenia regularne
+        // https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/regular-expression-language-quick-reference
+        // https://docs.microsoft.com/pl-pl/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=net-6.0
 
 
 

@@ -16,20 +16,53 @@
 
 <h1>Zadanie - rok przestępny</h1>
 
-@if(Model.yearModel !=null)
+
+@if (Model.yearsList != null)
 {
-<p>@*
-    @Html.DisplayNameFor(model => Model.yearModel):*@
-    @Model.yearModel.name,
-   @* @Html.DisplayNameFor(model => Model.yearModel):*@
-    @Model.yearModel.year - rok
-    @if (@Model.yearModel.ExtraYear())
-    {
-        <span>przestępny</span>
-    }
-    else
-    {
-        <span>nieprzestępny</span>
-    }
-</p>
+    <p>
+
+        @foreach (var item in Model.yearsList)
+        {
+            <span>
+                @item.name, @item.year - rok
+
+                @if (@item.ExtraYear())
+                {
+                    <span>przestępny</span>
+                }
+                else
+                {
+                    <span>nieprzestępny</span>
+                }
+
+            </span>
+            <br />
+        }
+
+    </p>
 }
+
+
+
+<!-- @*if(Model.yearModel !=null)
+    {
+    <p>
+
+        @Html.DisplayNameFor(model => Model.yearModel):
+        @Model.yearModel.name,
+
+        @Html.DisplayNameFor(model => Model.yearModel):
+        @Model.yearModel.year - rok
+
+        @if (@Model.yearModel.ExtraYear())
+        {
+            <span>przestępny</span>
+        }
+        else
+        {
+            <span>nieprzestępny</span>
+        }
+    *@
+    </p>
+    }
+-->
